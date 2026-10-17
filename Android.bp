@@ -11623,7 +11623,7 @@ cc_prebuilt_library_shared {
                 "libkeymint",
                 "libkeymaster_messages",
                 "libbinder_ndk",
-                "libkeymint_support",
+                "libkeymint_support_V4",
                 "libc++",
                 "libc",
                 "libm",
