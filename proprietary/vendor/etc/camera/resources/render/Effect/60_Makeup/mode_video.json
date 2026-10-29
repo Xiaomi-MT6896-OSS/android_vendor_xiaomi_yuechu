@@ -1,0 +1,13 @@
+{
+	"##":"视频妆容",
+	"Type":"Effect",
+	"EnvLightType": 0,
+	"TrueSight":
+	[
+		{
+			"ConfigurePath":"Effects/0_ModeVideo/effect.json",
+			"Index":0,
+			"Mode":"Preview"
+		}
+	]
+}

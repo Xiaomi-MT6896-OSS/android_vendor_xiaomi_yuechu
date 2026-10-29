@@ -24807,3 +24807,13 @@ install_symlink {
     installed_location: "lib64/yuechus5kgd2aux_mipi_raw_tuning.so",
     symlink_target: "/vendor/lib64/mt6895/yuechus5kgd2aux_mipi_raw_tuning.so",
 }
+
+// gma_custom.xml is not well-formed XML (several <Param> roots plus '#'
+// comments), so it cannot go through the PRODUCT_COPY_FILES xml check.
+prebuilt_etc {
+    name: "gma_custom_xml",
+    src: "proprietary/vendor/etc/camera/gma_custom.xml",
+    filename: "gma_custom.xml",
+    sub_dir: "camera",
+    vendor: true,
+}

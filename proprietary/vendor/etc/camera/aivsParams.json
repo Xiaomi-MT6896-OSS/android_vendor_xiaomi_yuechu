@@ -1,0 +1,94 @@
+{
+    "human_seg": {
+        "verify": [ "mialgo-ai" ],
+        "quantization": "int8",
+        "model_file_name": "seg_quantized.dla",
+        "inputs": [
+            {
+                "name": "input_tensor.1",
+                "shape": [ 1, 384, 384, 3 ]
+            }
+        ],
+        "outputs": [
+            {
+                "name": "975",
+                "shape": [ 1, 384, 384, 2 ]
+
+            }
+        ]
+    },
+    "humanSeg_depth": {
+        "verify": [ "mialgo-ai" ],
+        "quantization": "int8",
+        "model_file_name": "dunet.dla",
+        "inputs": [
+            {
+                "name": "x.1",
+                "shape": [ 1, 256, 256, 3 ]
+            }
+        ],
+        "outputs": [
+            {
+                "name": "642",
+                "shape": [ 1, 256, 256, 1 ]
+            },
+            {
+                "name": "644",
+                "shape": [ 1, 512, 512, 2 ]
+            }
+        ]
+    },
+    "saliency": {
+        "verify": [ "mialgo-ai" ],
+        "quantization": "int8",
+        "dlc_name": "ResNet256_clip0.3_cons_quan.dlc",
+        "inputs": [
+            {
+                "name": "data",
+                "shape": [ 1, 256, 256, 3 ]
+            }
+        ],
+
+        "outputs": [
+            {
+                "name": "output",
+                "shape": [ 1, 256, 256, 1 ]
+            }
+        ]
+    },
+    "humanSegPreview": {
+        "verify": [ "mialgo-multicam" ],
+        "quantization": "int8",
+        "dlc_name": "seg_preview_model.dlc",
+        "inputs": [
+            {
+                "name": "data",
+                "shape": [ 1, 256, 256, 3 ]
+            }
+        ],
+        "outputs": [
+            {
+                "name": "output",
+                "shape": [ 1, 512, 512, 2 ]
+            }
+        ]
+    },
+    "portrait_blur": {
+        "verify": [ "mialgo-multicam" ],
+        "quantization": "int8",
+        "dlc_name": "portrait_blur_800_443_quan_encry.dlc",
+        "inputs": [
+            {
+                "name": "data",
+                "shape": [ 1, 800, 800, 3 ]
+            }
+        ],
+        "outputs": [
+            {
+                "name": "score",
+                "shape": [ 1, 800, 800, 2 ]
+            }
+        ]
+    }
+}
+

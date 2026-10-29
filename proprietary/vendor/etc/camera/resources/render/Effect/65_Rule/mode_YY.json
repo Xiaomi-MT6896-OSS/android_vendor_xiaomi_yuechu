@@ -1,0 +1,12 @@
+{
+	"##":"氛围滤镜-艳阳",
+	"Type":"Effect",
+	"TrueSight":
+	[
+		{
+			"ConfigurePath":"Effects/4_ModeYY/effect.json",
+			"Index":0,
+			"Mode":"All"
+		}
+	]
+}
