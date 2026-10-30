@@ -24817,3 +24817,54 @@ prebuilt_etc {
     sub_dir: "camera",
     vendor: true,
 }
+
+// 32 位 HAL 模块在 /vendor/lib/hw/mt6895/ 下，必须补出软链，
+// 否则 32 位进程（mediaserver / 32 位应用）按名字找不到实现。
+install_symlink {
+    name: "vendor_lib_hw_android_hardware_graphics_allocator@4_0-impl-mediatek_so",
+    soc_specific: true,
+    installed_location: "lib/hw/android.hardware.graphics.allocator@4.0-impl-mediatek.so",
+    symlink_target: "/vendor/lib/hw/mt6895/android.hardware.graphics.allocator@4.0-impl-mediatek.so",
+}
+
+install_symlink {
+    name: "vendor_lib_hw_android_hardware_graphics_mapper@4_0-impl-mediatek_so",
+    soc_specific: true,
+    installed_location: "lib/hw/android.hardware.graphics.mapper@4.0-impl-mediatek.so",
+    symlink_target: "/vendor/lib/hw/mt6895/android.hardware.graphics.mapper@4.0-impl-mediatek.so",
+}
+
+install_symlink {
+    name: "vendor_lib_hw_gralloc_common_so",
+    soc_specific: true,
+    installed_location: "lib/hw/gralloc.common.so",
+    symlink_target: "/vendor/lib/hw/mt6895/gralloc.common.so",
+}
+
+install_symlink {
+    name: "vendor_lib_hw_vendor_mediatek_hardware_camera_atms@1_0-impl_so",
+    soc_specific: true,
+    installed_location: "lib/hw/vendor.mediatek.hardware.camera.atms@1.0-impl.so",
+    symlink_target: "/vendor/lib/hw/mt6895/vendor.mediatek.hardware.camera.atms@1.0-impl.so",
+}
+
+install_symlink {
+    name: "vendor_lib_hw_vendor_mediatek_hardware_camera_bgservice@1_1-impl_so",
+    soc_specific: true,
+    installed_location: "lib/hw/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so",
+    symlink_target: "/vendor/lib/hw/mt6895/vendor.mediatek.hardware.camera.bgservice@1.1-impl.so",
+}
+
+install_symlink {
+    name: "vendor_lib_hw_vendor_mediatek_hardware_pq@2_15-impl_so",
+    soc_specific: true,
+    installed_location: "lib/hw/vendor.mediatek.hardware.pq@2.15-impl.so",
+    symlink_target: "/vendor/lib/hw/mt6895/vendor.mediatek.hardware.pq@2.15-impl.so",
+}
+
+install_symlink {
+    name: "vendor_lib_hw_vulkan_mali_so",
+    soc_specific: true,
+    installed_location: "lib/hw/vulkan.mali.so",
+    symlink_target: "/vendor/lib/hw/mt6895/vulkan.mali.so",
+}

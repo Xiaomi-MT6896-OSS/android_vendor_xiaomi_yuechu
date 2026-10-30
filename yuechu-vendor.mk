@@ -1133,6 +1133,13 @@ PRODUCT_PACKAGES += \
     vendor_lib64_hw_vendor_mediatek_hardware_camera_bgservice@1_1-impl_so \
     vendor_lib64_hw_vendor_mediatek_hardware_pq@2_15-impl_so \
     vendor_lib64_hw_vulkan_mali_so \
+    vendor_lib_hw_android_hardware_graphics_allocator@4_0-impl-mediatek_so \
+    vendor_lib_hw_android_hardware_graphics_mapper@4_0-impl-mediatek_so \
+    vendor_lib_hw_gralloc_common_so \
+    vendor_lib_hw_vendor_mediatek_hardware_camera_atms@1_0-impl_so \
+    vendor_lib_hw_vendor_mediatek_hardware_camera_bgservice@1_1-impl_so \
+    vendor_lib_hw_vendor_mediatek_hardware_pq@2_15-impl_so \
+    vendor_lib_hw_vulkan_mali_so \
     vendor_lib64_arm_graphics-V1-ndk_platform_so \
     vendor_lib64_lib3a_ae_core_so \
     vendor_lib64_lib3a_ae_so \
