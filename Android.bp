@@ -18637,6 +18637,15 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
+// C1 Y16: hand-maintained override; re-apply after regenerating this file.
+genrule {
+    name: "libmtkcam_hal_android_device_cammeta",
+    srcs: ["proprietary/vendor/lib64/mt6895/libmtkcam_hal_android_device.so"],
+    tool_files: ["cammeta/patch_cammeta.sh"],
+    out: ["libmtkcam_hal_android_device.so"],
+    cmd: "cp $(in) $(out) && $(location cammeta/patch_cammeta.sh) $(out)",
+}
+
 cc_prebuilt_library_shared {
     name: "libmtkcam_hal_android_device",
     owner: "xiaomi",
@@ -18646,9 +18655,10 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/mt6895/libmtkcam_hal_android_device.so",
+                ":libmtkcam_hal_android_device_cammeta",
             ],
             shared_libs: [
+                "libcammeta_inject",
                 "libmtkcam_hal_android_common",
                 "libmtkcam_hal_android_app_cbadaptor",
                 "libmtkcam_hal_android_utils",
