@@ -10,6 +10,12 @@ set -eu
 so="${1:?usage: patch_cammeta.sh <libmtkcam_hal_android_device.so>}"
 [ -f "$so" ] || { echo "not a file: $so" >&2; exit 1; }
 
+PATCHELF="${PATCHELF:-}"
+if [ -z "$PATCHELF" ]; then
+  for c in /home/xie/.local/bin/patchelf /usr/local/bin/patchelf /usr/bin/patchelf; do
+    [ -x "$c" ] && { PATCHELF="$c"; break; }
+  done
+fi
 PATCHELF="${PATCHELF:-/usr/bin/patchelf}"
 READELF="${READELF:-/usr/bin/readelf}"
 [ -x "$PATCHELF" ] || { echo "patchelf not found at $PATCHELF" >&2; exit 1; }
